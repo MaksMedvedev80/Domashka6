@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Featured Items</title>
+    <style>
+        /* Стили для блока Featured Items */
+        .featured-item {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        .featured-item img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="featured-items"></div>
+
+    <script>
+        // JSON данные о товарах
+        const products = [
+            {
+                "name": "ELLERY X M`O CAPSULE",
+                "image": "./images/1.jpg",
+                "price": "$52.00",
+                "description": "Description of ELLERY X M`O CAPSULE"
+            },
+            {
+                "name": "ELLERY X M`O CAPSULE",
+                "image": "./images/2.jpg",
+                "price": "$52.00",
+                "description": "Description of ELLERY X M`O CAPSULE"
+            },
+            {
+                "name": "ELLERY X M`O CAPSULE",
+                "image": "./images/3.jpg",
+                "price": "$52.00",
+                "description": "Description of ELLERY X M`O CAPSULE"
+            },
+            {
+                "name": "ELLERY X M`O CAPSULE",
+                "image": "./images/4.jpg",
+                "price": "$52.00",
+                "description": "Description of ELLERY X M`O CAPSULE"
+            },
+            {
+                "name": "ELLERY X M`O CAPSULE",
+                "image": "./images/5.jpg",
+                "price": "$52.00",
+                "description": "Description of ELLERY X M`O CAPSULE"
+            },
+            {
+                "name": "ELLERY X M`O CAPSULE",
+                "image": "./images/6.jpg",
+                "price": "$52.00",
+                "description": "Description of ELLERY X M`O CAPSULE"
+            }
+        ];
+
+        // Получаем контейнер для блока Featured Items
+        const featuredItemsContainer = document.getElementById('featured-items');
+
+        // Создаем элементы для каждого товара
+        products.forEach(product => {
+            const itemDiv = document.createElement('div');
+            itemDiv.classList.add('featured-item');
+
+            const img = document.createElement('img');
+            img.src = product.image;
+            img.alt = product.name;
+
+            const name = document.createElement('h3');
+            name.textContent = product.name;
+
+            const price = document.createElement('p');
+            price.textContent = `Price: ${product.price}`;
+
+            const description = document.createElement('p');
+            description.textContent = product.description;
+
+            // Добавляем элементы в контейнер
+            itemDiv.appendChild(img);
+            itemDiv.appendChild(name);
+            itemDiv.appendChild(price);
+            itemDiv.appendChild(description);
+
+            featuredItemsContainer.appendChild(itemDiv);
+        });
+    </script>
+</body>
+</html>
